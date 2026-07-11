@@ -1,0 +1,24 @@
+# Copy to terraform.tfvars and adjust as needed.
+# terraform.tfvars is gitignored — never commit real values here.
+
+aws_region  = "us-east-1"
+environment = "staging"
+
+vpc_cidr           = "10.0.0.0/16"
+az_count           = 2
+single_nat_gateway = true
+
+app_name          = "wallet-app"
+container_image   = "public.ecr.aws/docker/library/nginx:1.27-alpine"
+container_port    = 8080
+app_task_cpu      = 512
+app_task_memory   = 1024
+app_desired_count = 2
+
+db_engine_version       = "16.4"
+db_instance_class       = "db.t4g.medium"
+db_allocated_storage    = 50
+db_name                 = "wallet"
+db_username             = "wallet_admin"
+db_backup_retention_days = 14
+db_multi_az             = true
