@@ -23,8 +23,8 @@ resource "aws_db_subnet_group" "main" {
 }
 
 resource "random_password" "db_master" {
-  length      = 32
-  special     = true
+  length  = 32
+  special = true
   # RDS disallows '/', '@', '"', and space in passwords
   override_special = "!#$%^&*()-_=+[]{}<>:?"
 }

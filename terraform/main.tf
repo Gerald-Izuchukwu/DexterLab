@@ -12,16 +12,6 @@ terraform {
     }
   }
 
-  # Intentionally left as local state for this exercise.
-  # In production this would be an S3 backend with a DynamoDB lock table:
-  #
-  # backend "s3" {
-  #   bucket         = "dexter-wallet-tfstate"
-  #   key            = "wallet-backend/terraform.tfstate"
-  #   region         = "us-east-1"
-  #   dynamodb_table = "dexter-wallet-tf-locks"
-  #   encrypt        = true
-  # }
 }
 
 provider "aws" {

@@ -33,9 +33,6 @@ resource "aws_lb_target_group" "app" {
   }
 }
 
-# NOTE: for the exercise this listener uses HTTP:80 so the config is self-contained
-# without requiring a real ACM certificate/domain. In production this is HTTPS:443
-# with an ACM certificate, and port 80 only exists to redirect to 443.
 resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.main.arn
   port              = 80
